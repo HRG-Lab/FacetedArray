@@ -54,3 +54,16 @@ def A(phi, element):
 
 return value
 ```
+
+## Important
+When you are working with a configuration that has more than one element per facet, you must specify the angle where the center of the element is located (in radians). For example:
+
+```python
+array = FacetedArray(
+    frequency = 28E9,
+    num_elements = 32,
+    num_facets = 16,
+    array_angles = [0.09342412368, np.pi/8 - 0.09342412368], # <-- Passed here as a list
+    element_pattern = A
+)
+```
